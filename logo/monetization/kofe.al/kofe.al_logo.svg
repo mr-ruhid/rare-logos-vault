@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 290" width="1200" height="290">
+  <defs>
+    <linearGradient id="lid" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#2F7BF5"/>
+      <stop offset="1" stop-color="#5B14C4"/>
+    </linearGradient>
+    <linearGradient id="dot" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#5B7CF5"/>
+      <stop offset="1" stop-color="#5B2FD6"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Stəkan qapağı (üst qara hissə) -->
+  <path d="M42 36 L168 42 Q178 44 176 54 L172 62 L46 62 Q38 62 38 54 V44 Q38 36 46 36 Z" fill="#222222"/>
+
+  <!-- Stəkan gövdəsi -->
+  <path d="M46 105 H178 L162 232 Q160 242 150 244 L78 252 Q64 253 62 240 Z" fill="#222222"/>
+
+  <!-- Rəngli qurşaq -->
+  <rect x="20" y="56" width="172" height="40" rx="14" fill="url(#lid)"/>
+
+  <!-- Yazı -->
+  <text x="232" y="250" font-family="Montserrat, 'Poppins', 'Segoe UI', Arial, sans-serif" font-size="270" font-weight="700" fill="#222222" letter-spacing="-6">kofe</text>
+  <text x="852" y="250" font-family="Montserrat, 'Poppins', 'Segoe UI', Arial, sans-serif" font-size="270" font-weight="700" fill="#222222" letter-spacing="-6">al</text>
+
+  <!-- Nöqtə -->
+  <circle cx="880" cy="228" r="27" fill="url(#dot)"/>
+</svg>
