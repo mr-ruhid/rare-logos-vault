@@ -1,5 +1,11 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="512" height="512">
-  <!-- P hərfinin xarici konturu -->
+
+  <!-- Arxa fon yoxdur, ona görə SVG tam şəffafdır.
+       Ağ loqonu test etmək üçün aşağıdakı sətri aktiv edə bilərsiniz:
+  <rect width="1024" height="1024" fill="#222222"/>
+  -->
+
+  <!-- P hərfinin xarici konturu: içi şəffaf (fill="none"), yalnız ağ xətt -->
   <path d="M172 1005
            V373
            A355 353 0 0 1 882 373
@@ -8,9 +14,12 @@
            Q375 733 375 745
            V830
            C375 930 290 1005 172 1005 Z"
-        fill="#ffffff" stroke="#222222" stroke-width="3" stroke-linejoin="round"/>
-  <!-- Daxili böyük dairə -->
-  <circle cx="527" cy="378" r="158" fill="none" stroke="#222222" stroke-width="3"/>
-  <!-- Daxili kiçik dairə -->
-  <circle cx="527" cy="378" r="37" fill="none" stroke="#222222" stroke-width="3"/>
+        fill="none" stroke="#ffffff" stroke-width="3" stroke-linejoin="round"/>
+
+  <!-- Böyük daxili dairə: içi şəffaf, yalnız ağ xətt -->
+  <circle cx="527" cy="378" r="158" fill="none" stroke="#ffffff" stroke-width="3"/>
+
+  <!-- Kiçik mərkəz nöqtəsi: içi şəffaf, yalnız ağ xətt -->
+  <circle cx="527" cy="378" r="37" fill="none" stroke="#ffffff" stroke-width="3"/>
+
 </svg>
