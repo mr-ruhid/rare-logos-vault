@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1080" width="540" height="540">
+  <g fill="#ffffff">
+    <!-- Yuxarı əyri hissə -->
+    <path d="M130 62 H560 C730 62 845 200 850 383 L722 388 C718 280 650 200 560 195 H218 C175 165 150 110 130 62 Z"/>
+    <!-- Aşağı diaqonal hissə -->
+    <path d="M307 572 H465 L800 1015 H642 Z"/>
+  </g>
+</svg>
