@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 700" width="960" height="350">
+  <defs>
+    <linearGradient id="purple" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#9f70ff"/>
+      <stop offset="1" stop-color="#946df0"/>
+    </linearGradient>
+  </defs>
+
+  <g fill="url(#purple)">
+    <!-- Sol işarə: yuxarı hissə -->
+    <path d="M20 58 H330 C420 58 480 130 480 262 H390 C390 200 350 145 290 145 H75 Z"/>
+    <!-- Sol işarə: aşağı xətt -->
+    <path d="M122 358 H228 L458 645 H345 Z"/>
+
+    <!-- R -->
+    <path fill-rule="evenodd" d="M588 170 H730 C810 170 866 215 866 285 C866 345 830 385 790 398 L868 515 H775 L710 405 H668 V515 H588 Z
+             M668 240 V340 H735 C770 340 785 320 785 290 C785 258 768 240 735 240 Z"/>
+
+    <!-- E -->
+    <path d="M938 170 H1165 V240 H1015 V295 H1150 V365 H1015 V445 H1168 V515 H938 Z"/>
+
+    <!-- A -->
+    <path fill-rule="evenodd" d="M1320 170 H1420 L1550 515 H1455 L1440 450 H1330 L1312 515 H1200 Z
+             M1378 270 L1332 392 H1424 Z"/>
+
+    <!-- X -->
+    <path d="M1580 170 H1670 L1740 275 L1810 170 H1900 L1790 340 L1905 515 H1815 L1740 405 L1665 515 H1575 L1690 340 Z"/>
+  </g>
+</svg>
