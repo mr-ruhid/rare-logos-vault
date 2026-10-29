@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "name": "rare-logos-vault / payment-gateway",
+    "version": "1.0.0",
+    "cdn_base": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/",
+    "count": 22,
+    "notice": "All logos are trademarks of their respective owners and are provided only to indicate supported payment methods."
+  },
+  "logos": {
+    "m10": {
+      "name": "M10",
+      "category": "wallet",
+      "country": "AZ",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/m10_azerbaijan/m10.svg",
+      "path": "logo/payment-gateway/m10_azerbaijan/m10.svg",
+      "aliases": []
+    },
+    "alipay": {
+      "name": "Alipay",
+      "category": "wallet",
+      "country": "CN",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/alipay/alipay.webp",
+      "path": "logo/payment-gateway/alipay/alipay.webp",
+      "aliases": []
+    },
+    "amex": {
+      "name": "American Express",
+      "category": "card-network",
+      "country": "US",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/amex/amex.svg",
+      "path": "logo/payment-gateway/amex/amex.svg",
+      "aliases": [
+        "american-express"
+      ]
+    },
+    "apple-pay": {
+      "name": "Apple Pay",
+      "category": "wallet",
+      "country": "US",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/apple-pay/apple_pay_transparent.svg",
+      "path": "logo/payment-gateway/apple-pay/apple_pay_transparent.svg",
+      "aliases": [
+        "applepay"
+      ]
+    },
+    "birbank": {
+      "name": "Birbank",
+      "category": "bank",
+      "country": "AZ",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/birbank_azerbaijan/birbank.svg",
+      "path": "logo/payment-gateway/birbank_azerbaijan/birbank.svg",
+      "aliases": []
+    },
+    "google-pay": {
+      "name": "Google Pay",
+      "category": "wallet",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/google-pay/Google_Pay_Logo.webp",
+      "path": "logo/payment-gateway/google-pay/Google_Pay_Logo.webp",
+      "aliases": [
+        "googlepay",
+        "gpay"
+      ]
+    },
+    "jcb": {
+      "name": "JCB",
+      "category": "card-network",
+      "country": "JP",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/jcb/jcb.webp",
+      "path": "logo/payment-gateway/jcb/jcb.webp",
+      "aliases": []
+    },
+    "leobank": {
+      "name": "Leobank",
+      "category": "bank",
+      "country": "AZ",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/leobank_azerbaijan/Logo_of_Leobank.webp",
+      "path": "logo/payment-gateway/leobank_azerbaijan/Logo_of_Leobank.webp",
+      "aliases": []
+    },
+    "m-pesa": {
+      "name": "M-Pesa",
+      "category": "wallet",
+      "country": "KE",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/m-pesa_africa/m-pesa.webp",
+      "path": "logo/payment-gateway/m-pesa_africa/m-pesa.webp",
+      "aliases": [
+        "mpesa"
+      ]
+    },
+    "maestro": {
+      "name": "Maestro",
+      "category": "card-network",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/maestro/maestro_logo_variant2.webp",
+      "path": "logo/payment-gateway/maestro/maestro_logo_variant2.webp",
+      "aliases": []
+    },
+    "million": {
+      "name": "Million",
+      "category": "terminal-network",
+      "country": "AZ",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/million_azerbaijan/million.svg",
+      "path": "logo/payment-gateway/million_azerbaijan/million.svg",
+      "aliases": []
+    },
+    "mastercard": {
+      "name": "Mastercard",
+      "category": "card-network",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/mastercard/mastercard_footer_logo.webp",
+      "path": "logo/payment-gateway/mastercard/mastercard_footer_logo.webp",
+      "aliases": [
+        "master-card"
+      ]
+    },
+    "paypal": {
+      "name": "PayPal",
+      "category": "wallet",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/pay-pal/paypal.webp",
+      "path": "logo/payment-gateway/pay-pal/paypal.webp",
+      "aliases": [
+        "pay-pal"
+      ]
+    },
+    "3d-secure": {
+      "name": "3-D Secure",
+      "category": "security-badge",
+      "country": null,
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/payment-component/3d-secure.svg",
+      "path": "logo/payment-gateway/payment-component/3d-secure.svg",
+      "aliases": [
+        "3ds",
+        "3dsecure"
+      ]
+    },
+    "pci-dss": {
+      "name": "PCI DSS",
+      "category": "security-badge",
+      "country": null,
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/payment-component/pci-dss.svg",
+      "path": "logo/payment-gateway/payment-component/pci-dss.svg",
+      "aliases": [
+        "pci",
+        "pcidss"
+      ]
+    },
+    "phonepe": {
+      "name": "PhonePe",
+      "category": "wallet",
+      "country": "IN",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/phonepe/PhonePe_Logo.webp",
+      "path": "logo/payment-gateway/phonepe/PhonePe_Logo.webp",
+      "aliases": []
+    },
+    "pix": {
+      "name": "Pix",
+      "category": "instant-payment",
+      "country": "BR",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/pix_brasil/pix.webp",
+      "path": "logo/payment-gateway/pix_brasil/pix.webp",
+      "aliases": []
+    },
+    "stc-pay": {
+      "name": "stc pay",
+      "category": "wallet",
+      "country": "SA",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/stc_pay/stc-pay.webp",
+      "path": "logo/payment-gateway/stc_pay/stc-pay.webp",
+      "aliases": [
+        "stcpay"
+      ]
+    },
+    "stripe": {
+      "name": "Stripe",
+      "category": "gateway",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/stripe/stripe.webp",
+      "path": "logo/payment-gateway/stripe/stripe.webp",
+      "aliases": []
+    },
+    "unionpay": {
+      "name": "UnionPay",
+      "category": "card-network",
+      "country": "CN",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/unionpay/unionpay.webp",
+      "path": "logo/payment-gateway/unionpay/unionpay.webp",
+      "aliases": [
+        "union-pay"
+      ]
+    },
+    "visa": {
+      "name": "Visa",
+      "category": "card-network",
+      "country": "US",
+      "format": "webp",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/visa/visa_inc.webp",
+      "path": "logo/payment-gateway/visa/visa_inc.webp",
+      "aliases": [
+        "visa-inc"
+      ]
+    },
+    "wechat-pay": {
+      "name": "WeChat Pay",
+      "category": "wallet",
+      "country": "CN",
+      "format": "svg",
+      "url": "https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/wechat-pay/wechat-pay.svg",
+      "path": "logo/payment-gateway/wechat-pay/wechat-pay.svg",
+      "aliases": [
+        "wechatpay",
+        "weixin-pay"
+      ]
+    }
+  }
+}
