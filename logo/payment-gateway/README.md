@@ -1,39 +1,39 @@
 # rare-logos-vault
 
-Ödəniş sistemlərinin **düzgün və keyfiyyətli loqoları** bir yerdə. Artıq internetdə saatlarla axtarmağa ehtiyac yoxdur: loqonu adı ilə tapın, linkini götürün və istifadə edin.
+**Correct, high-quality payment logos in one place.** No more spending hours searching the internet: find a logo by name, grab its link and use it.
 
-Hazırda **22 loqo** var: kart şəbəkələri, elektron cüzdanlar, banklar, ödəniş gateway-ləri və təhlükəsizlik nişanları.
-
----
-
-## Mündəricat
-
-- [Sürətli başlanğıc](#sürətli-başlanğıc)
-- [İstifadə nümunələri](#istifadə-nümunələri)
-- [index.json strukturu](#indexjson-strukturu)
-- [Repo quruluşu](#repo-quruluşu)
-- [Loqoların siyahısı](#loqoların-siyahısı)
-- [Töhfə vermək](#töhfə-vermək)
+The vault currently contains **22 logos**: card networks, digital wallets, banks, payment gateways and security badges.
 
 ---
 
-## Sürətli başlanğıc
+## Table of contents
 
-Bütün loqoların siyahısı bir faylda saxlanılır: **`index.json`**. Hər loqonun adı, kateqoriyası, ölkəsi, formatı və birbaşa linki orada var.
+- [Quick start](#quick-start)
+- [Usage examples](#usage-examples)
+- [index.json structure](#indexjson-structure)
+- [Repository structure](#repository-structure)
+- [Logo list](#logo-list)
+- [Contributing](#contributing)
+
+---
+
+## Quick start
+
+All logos are listed in a single file: **`index.json`**. For every logo it contains the name, category, country, format and a direct link.
 
 ```
 https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/index.json
 ```
 
-Fayl adları bir-birindən fərqli ola bilər (`visa_inc.webp`, `Google_Pay_Logo.webp` və s.). Ona görə linki əl ilə yazmaq əvəzinə, `index.json`-dan adla götürün.
+File names are not uniform across the repo (`visa_inc.webp`, `Google_Pay_Logo.webp`, etc.), so instead of building links by hand, look logos up by name in `index.json`.
 
 ---
 
-## İstifadə nümunələri
+## Usage examples
 
 ### HTML
 
-Linki birbaşa `<img>` içində istifadə edə bilərsiniz:
+Use the link directly inside an `<img>` tag:
 
 ```html
 <img
@@ -43,7 +43,7 @@ Linki birbaşa `<img>` içində istifadə edə bilərsiniz:
 />
 ```
 
-### JavaScript: adla loqo tapmaq
+### JavaScript: find a logo by name
 
 ```js
 const INDEX_URL =
@@ -51,11 +51,11 @@ const INDEX_URL =
 
 const db = await (await fetch(INDEX_URL)).json();
 
-// 1) Açar (slug) ilə
+// 1) By key (slug)
 const visa = db.logos["visa"];
 console.log(visa.url);
 
-// 2) Ad və ya alias ilə (məsələn "gpay", "3ds")
+// 2) By name or alias (e.g. "gpay", "3ds")
 function findLogo(query) {
   const q = query.toLowerCase().trim();
   return Object.entries(db.logos).find(([slug, logo]) =>
@@ -68,13 +68,13 @@ function findLogo(query) {
 console.log(findLogo("gpay").url);
 ```
 
-### JavaScript: kateqoriyaya görə siyahı
+### JavaScript: filter by category or country
 
 ```js
-// Bütün elektron cüzdanlar
+// All digital wallets
 const wallets = Object.values(db.logos).filter(l => l.category === "wallet");
 
-// Yalnız Azərbaycan brendləri
+// Brands from Azerbaijan only
 const az = Object.values(db.logos).filter(l => l.country === "AZ");
 ```
 
@@ -89,13 +89,13 @@ db = requests.get(INDEX_URL, timeout=10).json()
 logo = db["logos"]["paypal"]
 print(logo["name"], logo["url"])
 
-# Faylı yükləmək
+# Download the file
 img = requests.get(logo["url"], timeout=10).content
 with open(f"paypal.{logo['format']}", "wb") as f:
     f.write(img)
 ```
 
-### Ödəniş səhifəsində göstərmək (nümunə)
+### Showing accepted payment methods on a checkout page
 
 ```html
 <div id="payment-methods"></div>
@@ -113,16 +113,16 @@ with open(f"paypal.{logo['format']}", "wb") as f:
 </script>
 ```
 
-### Keş haqqında
+### About caching
 
-Linklər [jsDelivr](https://www.jsdelivr.com/) CDN üzərindən verilir və keşlənir. Yeni commit-dən sonra dəyişiklik dərhal görünməyə bilər. Bu halda:
+Links are served through the [jsDelivr](https://www.jsdelivr.com/) CDN and are cached. After a new commit, changes may not appear immediately. In that case:
 
-- linkdə `@main` əvəzinə commit hash və ya tag yazın (`@a1b2c3d`, `@v1.0.0`). Bu həm də linkin dəyişməməsini təmin edir.
-- və ya keşi təmizləyin: `https://purge.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/index.json`
+- use a commit hash or tag instead of `@main` in the link (`@a1b2c3d`, `@v1.0.0`). This also keeps the link stable over time.
+- or purge the cache: `https://purge.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/index.json`
 
 ---
 
-## index.json strukturu
+## index.json structure
 
 ```json
 {
@@ -146,20 +146,20 @@ Linklər [jsDelivr](https://www.jsdelivr.com/) CDN üzərindən verilir və keş
 }
 ```
 
-| Sahə | İzah |
+| Field | Description |
 | --- | --- |
-| açar (`visa`) | Unikal ad (slug): kiçik hərf, boşluqsuz |
-| `name` | Brendin rəsmi adı |
+| key (`visa`) | Unique slug: lowercase, no spaces |
+| `name` | Official brand name |
 | `category` | `card-network`, `wallet`, `bank`, `gateway`, `instant-payment`, `terminal-network`, `security-badge` |
-| `country` | ISO ölkə kodu (`AZ`, `US`). Qlobal nişanlar üçün `null` |
-| `format` | `svg` və ya `webp` |
-| `url` | Birbaşa CDN linki |
-| `path` | Repo daxilindəki yol |
-| `aliases` | Alternativ adlar (axtarış üçün) |
+| `country` | ISO country code (`AZ`, `US`); `null` for global badges |
+| `format` | `svg` or `webp` |
+| `url` | Direct CDN link |
+| `path` | Path inside the repository |
+| `aliases` | Alternative names (for lookup) |
 
 ---
 
-## Repo quruluşu
+## Repository structure
 
 ```
 logo/
@@ -173,9 +173,9 @@ logo/
 
 ---
 
-## Loqoların siyahısı
+## Logo list
 
-| Önizləmə | Ad | Açar | Kateqoriya | Ölkə | Format |
+| Preview | Name | Key | Category | Country | Format |
 | --- | --- | --- | --- | --- | --- |
 | <img src="https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/m10_azerbaijan/m10.svg" height="32" alt="M10"> | M10 | `m10` | wallet | AZ | svg |
 | <img src="https://cdn.jsdelivr.net/gh/mr-ruhid/rare-logos-vault@main/logo/payment-gateway/alipay/alipay.webp" height="32" alt="Alipay"> | Alipay | `alipay` | wallet | CN | webp |
@@ -202,12 +202,12 @@ logo/
 
 ---
 
-## Töhfə vermək
+## Contributing
 
-Yeni loqo əlavə etmək və ya mövcud loqonu düzəltmək istəyirsinizsə, [CONTRIBUTING.md](CONTRIBUTING.md) sənədini oxuyun. Orada fayl tələbləri, adlandırma qaydası və Pull Request addımları izah olunub.
+Want to add a new logo or fix an existing one? Read [CONTRIBUTING.md](CONTRIBUTING.md). It explains file requirements, naming rules and the Pull Request steps.
 
-Loqo çatışmırsa və ya səhv görsəniz, **Issue** açın.
+If a logo is missing or wrong, please open an **Issue**.
 
 ---
 
-> Bütün loqolar öz sahiblərinin əmtəə nişanıdır. Ətraflı: [CONTRIBUTING.md, hüquqi qeydlər](CONTRIBUTING.md#9-hüquqi-qeydlər-və-silinmə-sorğusu).
+> All logos are trademarks of their respective owners. More details: [CONTRIBUTING.md, legal notes](CONTRIBUTING.md#9-legal-notes-and-takedown-requests).
