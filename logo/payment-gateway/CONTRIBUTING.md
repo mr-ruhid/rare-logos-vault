@@ -1,37 +1,37 @@
-# Töhfə vermə qaydası (Contributing)
+# Contributing
 
-**rare-logos-vault** layihəsinə töhfə verdiyiniz üçün təşəkkür edirik! Məqsədimiz sadədir: insanlar ödəniş sistemlərinin **düzgün və keyfiyyətli loqolarını** internetdə saatlarla axtarmasın, hamısı bir yerdə olsun.
+Thank you for contributing to **rare-logos-vault**! Our goal is simple: people should not have to search the internet for hours to find the **correct, high-quality logos** of payment systems. Everything should be in one place.
 
-Bu sənəd yeni loqo əlavə etməyin, mövcud loqonu düzəltməyin və problem bildirməyin qaydalarını izah edir.
-
----
-
-## Mündəricat
-
-1. [Əsas qaydalar](#1-əsas-qaydalar)
-2. [Qovluq və fayl adlandırma](#2-qovluq-və-fayl-adlandırma)
-3. [Fayl tələbləri](#3-fayl-tələbləri)
-4. [index.json-a əlavə etmə](#4-indexjson-a-əlavə-etmə)
-5. [Addım-addım: yeni loqo əlavə etmək](#5-addım-addım-yeni-loqo-əlavə-etmək)
-6. [Commit mesajı qaydası](#6-commit-mesajı-qaydası)
-7. [Pull Request yoxlama siyahısı](#7-pull-request-yoxlama-siyahısı)
-8. [Mövcud loqonu düzəltmək](#8-mövcud-loqonu-düzəltmək)
-9. [Hüquqi qeydlər və silinmə sorğusu](#9-hüquqi-qeydlər-və-silinmə-sorğusu)
-10. [Davranış qaydaları](#10-davranış-qaydaları)
+This guide explains how to add a new logo, fix an existing one and report problems.
 
 ---
 
-## 1. Əsas qaydalar
+## Table of contents
 
-- Yalnız **rəsmi** loqoları əlavə edin. Fanat tərəfindən yenidən çəkilmiş, dəyişdirilmiş və ya rəngi dəyişdirilmiş versiyalar qəbul edilmir.
-- Loqonu mümkün qədər **rəsmi brend səhifəsindən** (brand / press kit / media resources) götürün.
-- Eyni loqo artıq varsa, təkrar əlavə etməyin. Əvvəlcə `index.json`-da axtarın.
-- Bir Pull Request-də **bir brend** olsun. Bu, yoxlamanı asanlaşdırır.
-- Loqonun forması, nisbəti və rəngləri **dəyişdirilməməlidir** (uzatmaq, sıxmaq, kölgə və effekt əlavə etmək olmaz).
+1. [Ground rules](#1-ground-rules)
+2. [Folder and file naming](#2-folder-and-file-naming)
+3. [File requirements](#3-file-requirements)
+4. [Adding to index.json](#4-adding-to-indexjson)
+5. [Step by step: adding a new logo](#5-step-by-step-adding-a-new-logo)
+6. [Commit message convention](#6-commit-message-convention)
+7. [Pull Request checklist](#7-pull-request-checklist)
+8. [Fixing an existing logo](#8-fixing-an-existing-logo)
+9. [Legal notes and takedown requests](#9-legal-notes-and-takedown-requests)
+10. [Code of conduct](#10-code-of-conduct)
 
-## 2. Qovluq və fayl adlandırma
+---
 
-Loqolar bu quruluşda saxlanılır:
+## 1. Ground rules
+
+- Only add **official** logos. Fan-made, redrawn or recolored versions are not accepted.
+- Get the logo from the brand's **official website** whenever possible (brand / press kit / media resources page).
+- Do not add duplicates. Search `index.json` first.
+- Keep **one brand per Pull Request**. It makes review easier.
+- Do not alter the logo's shape, proportions or colors (no stretching, squeezing, shadows or effects).
+
+## 2. Folder and file naming
+
+Logos are stored in this structure:
 
 ```
 logo/
@@ -45,40 +45,40 @@ logo/
         └── birbank.svg
 ```
 
-Qaydalar:
+Rules:
 
-- Qovluq adı: **kiçik hərflərlə**, boşluqsuz, ingilis əlifbası ilə (`stripe`, `wechat-pay`).
-- Yalnız bir ölkədə fəaliyyət göstərən yerli brendlər üçün qovluğun sonuna ölkə əlavə edin: `birbank_azerbaijan`, `pix_brasil`.
-- Fayl adı: **kiçik hərflərlə**, sözləri `-` və ya `_` ilə ayırın. Adda brendin adı olsun (`stripe.webp`, `apple_pay_transparent.svg`).
-- Eyni brendin bir neçə variantı varsa (açıq/tünd fon və s.), sonuna variantı yazın: `visa_dark.svg`, `visa_light.svg`.
-- Adlarda Azərbaycan hərfləri (ə, ö, ü, ı, ş, ç, ğ), böyük hərf və boşluq istifadə etməyin.
+- Folder name: **lowercase**, no spaces, English letters only (`stripe`, `wechat-pay`).
+- For local brands that operate in a single country, add the country to the end of the folder name: `birbank_azerbaijan`, `pix_brasil`.
+- File name: **lowercase**, words separated by `-` or `_`, and it should contain the brand name (`stripe.webp`, `apple_pay_transparent.svg`).
+- If a brand has several variants (light/dark background, etc.), add the variant at the end: `visa_dark.svg`, `visa_light.svg`.
+- Do not use non-English letters, uppercase letters or spaces in names.
 
-## 3. Fayl tələbləri
+## 3. File requirements
 
-### SVG (üstünlük verilən format)
+### SVG (preferred format)
 
-- Fon **şəffaf** olmalıdır.
-- Daxilində **rastr şəkil (base64 PNG/JPG) olmamalıdır**. Yalnız vektor yollar (path) olmalıdır.
-- `<script>`, xarici linklər və şrift asılılığı olmamalıdır. Yazılar yola (outline) çevrilməlidir.
-- `viewBox` atributu olmalıdır.
-- Mümkünsə [SVGO](https://github.com/svg/svgo) ilə optimallaşdırın. Ölçü **200 KB-dan** az olmalıdır.
+- The background must be **transparent**.
+- It must **not contain embedded raster images** (base64 PNG/JPG). Only vector paths are allowed.
+- No `<script>`, external links or font dependencies. Text must be converted to outlines.
+- A `viewBox` attribute must be present.
+- Optimize with [SVGO](https://github.com/svg/svgo) if possible. File size must be **under 200 KB**.
 
-### WebP / PNG (SVG tapılmadıqda)
+### WebP / PNG (when no SVG is available)
 
-- Fon **şəffaf** olmalıdır.
-- Ən azı **512 px** eni olmalıdır, bulanıq və ya pikselləşmiş olmamalıdır.
-- Ətrafında artıq boşluq (padding) və ya su nişanı (watermark) olmamalıdır.
-- SVG variantı sonradan tapılsa, WebP faylı ilə yanaşı əlavə edilə bilər.
+- The background must be **transparent**.
+- Width must be at least **512 px**, and the image must not be blurry or pixelated.
+- No extra padding around the logo and no watermarks.
+- If an SVG version is found later, it can be added alongside the WebP file.
 
-### Rənglər
+### Colors
 
-- Rəsmi rəngləri saxlayın. Yalnız brendin özünün təqdim etdiyi tək rəngli (ağ/qara) variantları əlavə edə bilərsiniz.
+- Keep the official colors. You may add single-color (white/black) variants only if the brand itself provides them.
 
-## 4. index.json-a əlavə etmə
+## 4. Adding to index.json
 
-Hər yeni loqo `logo/payment-gateway/index.json` faylındakı `logos` obyektinə əlavə olunmalıdır. `meta.count` dəyərini də yeniləməyi unutmayın.
+Every new logo must be added to the `logos` object in `logo/payment-gateway/index.json`. Don't forget to update `meta.count` too.
 
-Nümunə:
+Example:
 
 ```json
 "visa": {
@@ -93,70 +93,70 @@ Nümunə:
 }
 ```
 
-Sahələrin izahı:
+Field reference:
 
-| Sahə | Tələb | İzah |
+| Field | Requirement | Description |
 | --- | --- | --- |
-| açar (`visa`) | məcburi | Kiçik hərflə, boşluqsuz, `-` ilə ayrılmış unikal ad (slug). |
-| `name` | məcburi | Brendin rəsmi yazılışı. |
-| `category` | məcburi | Aşağıdakı siyahıdan biri. |
-| `country` | məcburi | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) kodu (`AZ`, `US`). Qlobal nişanlar üçün `null`. |
-| `format` | məcburi | `svg` və ya `webp` (və ya `png`). |
-| `url` | məcburi | jsDelivr CDN linki. `github.com/.../blob/...` linki **yazmayın**. |
-| `path` | məcburi | Repo daxilindəki fayl yolu. |
-| `aliases` | ixtiyari | Axtarışda istifadə oluna biləcək alternativ adlar (`gpay`, `3ds`). |
-| `source` | **yeni loqolar üçün məcburi** | Loqonun götürüldüyü rəsmi səhifənin linki. |
+| key (`visa`) | required | Unique slug: lowercase, no spaces, words separated by `-`. |
+| `name` | required | Official spelling of the brand. |
+| `category` | required | One of the categories listed below. |
+| `country` | required | [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code (`AZ`, `US`). Use `null` for global badges. |
+| `format` | required | `svg`, `webp` (or `png`). |
+| `url` | required | jsDelivr CDN link. Do **not** use `github.com/.../blob/...` links. |
+| `path` | required | File path inside the repository. |
+| `aliases` | optional | Alternative names that can be used for lookup (`gpay`, `3ds`). |
+| `source` | **required for new logos** | Link to the official page the logo was taken from. |
 
-İcazə verilən kateqoriyalar:
+Allowed categories:
 
 `card-network`, `wallet`, `bank`, `gateway`, `instant-payment`, `terminal-network`, `security-badge`
 
-Yeni kateqoriya lazımdırsa, əvvəlcə Issue açıb təklif edin.
+If you need a new category, please open an Issue and propose it first.
 
-Əlavə etdikdən sonra JSON-un düzgün olduğunu yoxlayın:
+After editing, check that the JSON is valid:
 
 ```bash
-python3 -m json.tool logo/payment-gateway/index.json > /dev/null && echo "JSON düzgündür"
+python3 -m json.tool logo/payment-gateway/index.json > /dev/null && echo "JSON is valid"
 ```
 
-## 5. Addım-addım: yeni loqo əlavə etmək
+## 5. Step by step: adding a new logo
 
-1. Repo-nu **Fork** edin.
-2. Fork-u kompüterinizə klonlayın və yeni branch yaradın:
+1. **Fork** the repository.
+2. Clone your fork and create a new branch:
    ```bash
-   git checkout -b add-<brend-adi>
+   git checkout -b add-<brand-name>
    ```
-3. Loqonu bölmə 2-yə uyğun qovluğa və adla əlavə edin.
-4. Fayl tələblərini (bölmə 3) yoxlayın.
-5. `index.json`-a yeni qeyd əlavə edin və `meta.count` dəyərini artırın.
-6. JSON-u yoxlayın (bölmə 4-ün sonundakı komanda).
-7. Commit edin (bölmə 6-ya uyğun):
+3. Add the logo to the correct folder with the correct name (section 2).
+4. Check the file requirements (section 3).
+5. Add a new entry to `index.json` and increase `meta.count`.
+6. Validate the JSON (command at the end of section 4).
+7. Commit following section 6:
    ```bash
    git add .
-   git commit -m "feat(payment-gateway): add <Brend> logo"
+   git commit -m "feat(payment-gateway): add <Brand> logo"
    ```
-8. Branch-i push edin və **Pull Request** açın. PR təsvirində loqonun mənbəyini göstərin.
+8. Push your branch and open a **Pull Request**. Mention the logo's source in the PR description.
 
-Git ilə tanış deyilsinizsə, GitHub-ın veb interfeysindən də fayl yükləyib PR aça bilərsiniz.
+If you are not familiar with Git, you can also upload files and open a PR through the GitHub web interface.
 
-## 6. Commit mesajı qaydası
+## 6. Commit message convention
 
 Format:
 
 ```
-<tip>(payment-gateway): <qısa izah>
+<type>(payment-gateway): <short description>
 ```
 
-Tiplər:
+Types:
 
-| Tip | Nə vaxt |
+| Type | When to use |
 | --- | --- |
-| `feat` | Yeni loqo və ya yeni variant əlavə edildikdə |
-| `fix` | Səhv loqo, səhv link və ya `index.json` xətası düzəldildikdə |
-| `chore` | Fayl adı dəyişikliyi, optimallaşdırma, təmizlik |
-| `docs` | README, CONTRIBUTING və s. dəyişiklikləri |
+| `feat` | A new logo or a new variant is added |
+| `fix` | A wrong logo, a wrong link or an `index.json` error is fixed |
+| `chore` | File renames, optimization, cleanup |
+| `docs` | Changes to README, CONTRIBUTING, etc. |
 
-Nümunələr:
+Examples:
 
 ```
 feat(payment-gateway): add Kapital Bank logo
@@ -165,40 +165,40 @@ chore(payment-gateway): optimize amex.svg with svgo
 docs: update contributing guide
 ```
 
-## 7. Pull Request yoxlama siyahısı
+## 7. Pull Request checklist
 
-PR açmazdan əvvəl bunları yoxlayın:
+Before opening a PR, check the following:
 
-- [ ] Loqo rəsmi mənbədən götürülüb və `source` sahəsi doldurulub
-- [ ] Eyni loqo repoda əvvəlcədən yoxdur
-- [ ] Fon şəffafdır
-- [ ] SVG-dirsə, içində rastr şəkil və skript yoxdur
-- [ ] Rastr formatdırsa, eni ən azı 512 px-dir və bulanıq deyil
-- [ ] Qovluq və fayl adı qaydalara uyğundur (kiçik hərf, boşluqsuz)
-- [ ] `index.json`-a qeyd əlavə olunub, `meta.count` yenilənib
-- [ ] JSON düzgündür (`json.tool` xəta vermir)
-- [ ] `url` sahəsi jsDelivr linkidir, `github.com/blob` deyil
-- [ ] PR yalnız bir brendi əhatə edir
+- [ ] The logo comes from an official source and the `source` field is filled in
+- [ ] The same logo does not already exist in the repo
+- [ ] The background is transparent
+- [ ] If SVG: no embedded raster images and no scripts
+- [ ] If raster: at least 512 px wide and not blurry
+- [ ] Folder and file names follow the rules (lowercase, no spaces)
+- [ ] An entry was added to `index.json` and `meta.count` was updated
+- [ ] The JSON is valid (`json.tool` shows no error)
+- [ ] The `url` field is a jsDelivr link, not `github.com/blob`
+- [ ] The PR covers only one brand
 
-## 8. Mövcud loqonu düzəltmək
+## 8. Fixing an existing logo
 
-- **Köhnə və ya səhv loqo:** Yeni faylı əlavə edin və PR-da nəyin dəyişdiyini və səbəbini yazın. Köhnə fayl adını mümkün qədər saxlayın ki, mövcud linklər pozulmasın.
-- **Keyfiyyətli versiya tapılıbsa (məsələn WebP əvəzinə SVG):** Yeni faylı yanına əlavə edin və `index.json`-da `format` və `url` sahələrini yeniləyin.
-- **Fayl adının dəyişdirilməsi:** Linkləri istifadə edən layihələri sındıra bilər. Əvvəlcə Issue açıb müzakirə edin.
+- **Outdated or wrong logo:** Add the new file and explain in the PR what changed and why. Keep the old file name where possible so existing links do not break.
+- **Better version found (e.g. SVG instead of WebP):** Add the new file next to the old one and update the `format` and `url` fields in `index.json`.
+- **Renaming a file:** This can break projects that use the links. Please open an Issue and discuss it first.
 
-## 9. Hüquqi qeydlər və silinmə sorğusu
+## 9. Legal notes and takedown requests
 
-- Bütün loqolar öz sahiblərinin **əmtəə nişanıdır**. Bu repo yalnız ödəniş üsullarını göstərmək məqsədilə onları toplayır və sahiblik iddia etmir.
-- Bəzi brendlər (Visa, Mastercard, Apple Pay, Google Pay və s.) loqolarından istifadə üçün **ciddi qaydalar** təyin edir. Loqonu istifadə edən şəxs həmin qaydalara əməl etməlidir.
-- Loqonun sahibi və ya səlahiyyətli nümayəndəsi loqonun silinməsini istəyirsə, **Issue** açın və ya repo sahibi ilə əlaqə saxlayın. Sorğu yoxlanıldıqdan sonra loqo tez bir zamanda silinəcək.
-- Başqasının müəllif hüququ ilə qorunan, rəsmi olmayan dizayn və ya yenidən çəkilmiş loqoları əlavə etməyin.
+- All logos are **trademarks** of their respective owners. This repository collects them only to indicate supported payment methods and does not claim ownership.
+- Some brands (Visa, Mastercard, Apple Pay, Google Pay, etc.) set **strict usage rules** for their logos. Anyone using a logo is responsible for following those rules.
+- If you are the owner of a logo, or an authorized representative, and want it removed, please open an **Issue** or contact the repository owner. After verification, the logo will be removed promptly.
+- Do not add unofficial designs or redrawn logos that are protected by someone else's copyright.
 
-## 10. Davranış qaydaları
+## 10. Code of conduct
 
-- Hörmətli və konstruktiv olun. Rəy bildirərkən şəxsə yox, işə fikir verin.
-- Yoxlama zamanı verilən qeydlər layihənin keyfiyyətini qorumaq üçündür, bunu şəxsi qəbul etməyin.
-- Təhqir, təzyiq və spam qəbul edilmir.
+- Be respectful and constructive. Focus on the work, not the person.
+- Review comments are there to protect the quality of the project. Please do not take them personally.
+- Insults, harassment and spam are not tolerated.
 
 ---
 
-Sualınız varsa, **Issue** açın. Töhfələriniz üçün əvvəlcədən təşəkkür edirik!
+If you have any questions, open an **Issue**. Thank you in advance for your contributions!
